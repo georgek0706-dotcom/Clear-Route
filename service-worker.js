@@ -1,1 +1,1 @@
-const CACHE='clearroute-v13';self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.keys().then(keys=>Promise.all(keys.map(k=>caches.delete(k)))))});self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
+const CACHE='clearroute-v15';self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.keys().then(keys=>Promise.all(keys.map(k=>caches.delete(k)))))});self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));

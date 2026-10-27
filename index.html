@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071827"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon.png"><title>ClearRoute — Traffic-Aware Navigation v2.1</title><link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet"><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071827"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon.png"><title>ClearRoute — Traffic-Aware Navigation v2.2</title><link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet"><style>
 :root{color-scheme:dark;--bg:#071827;--card:#112a3a;--text:#f1f8ff;--muted:#a4bdca;--aqua:#42e3c4}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}#map{position:fixed;inset:0}.overlay{position:absolute;z-index:5;top:calc(12px + env(safe-area-inset-top));left:12px;right:12px;max-width:490px;margin:auto}.panel{background:rgba(7,24,39,.95);border:1px solid #315060;box-shadow:0 10px 38px #0015;border-radius:19px;padding:16px;backdrop-filter:blur(16px)}h1{font-size:21px;margin:0 0 4px;letter-spacing:-.4px}small,.sub{color:var(--muted)}.brand{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.pill{border:1px solid #38677b;padding:5px 8px;border-radius:9px;color:#8beedb;font-size:11px}.row{display:flex;gap:8px}.field{background:#173344;color:#fff;border:1px solid #3a5c6e;padding:12px;border-radius:11px;width:100%;font-size:16px;min-width:0}input:focus{outline:2px solid var(--aqua)}button{border:0;border-radius:11px;padding:11px 13px;font:600 14px -apple-system,sans-serif;cursor:pointer;color:#07202b;background:var(--aqua)}button:disabled{opacity:.5}.secondary{color:#f1f8ff;background:#23485e}.loc{width:125px;flex-shrink:0}.fieldWrap{position:relative;margin-top:8px}.suggestions{position:absolute;left:0;right:0;top:48px;background:#193648;border:1px solid #3c6576;border-radius:10px;max-height:180px;overflow:auto;z-index:20;display:none}.suggestions button{display:block;width:100%;text-align:left;background:transparent;border-radius:0;border-bottom:1px solid #315267;color:#fff;font-weight:400}.actions{display:flex;gap:8px;margin-top:10px}.actions button{flex:1}.status{font-size:12px;margin-top:9px;color:#abd0df;min-height:18px}.routebox{margin-top:10px;display:none}.routegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.routebtn{display:block;text-align:left;min-width:0;background:#183746;border:1px solid #3e6070;color:white;padding:10px 8px}.routebtn.selected{border:2px solid var(--aqua);background:#1a4c51}.routebtn strong{display:block;font-size:12px;margin-bottom:5px}.routebtn b{font-size:21px}.routebtn span{display:block;font-size:11px;color:#afcbd4;margin-top:4px}.info{font-size:12px;color:#bfd4dd;margin:10px 1px 0}.drivebar{display:none;margin-top:10px;padding:10px 12px;background:#18413e;border-radius:11px;justify-content:space-between;align-items:center;gap:8px}.drivebar strong{color:#8cffe1}.drivebar button{background:#ffceb7}.bottom{position:absolute;z-index:4;bottom:calc(14px + env(safe-area-inset-bottom));left:12px;right:12px;max-width:480px;margin:auto;background:#071827de;border-radius:14px;padding:10px 13px;color:#c1d6de;font-size:12px;text-align:center}.mapboxgl-ctrl-bottom-right{bottom:60px}.compact .overlay{top:calc(7px + env(safe-area-inset-top));left:9px;right:9px}.compact .panel{padding:10px 12px;border-radius:13px}.compact .brand{margin:0}.compact .brand small,.compact .brand .pill,.compact .row,.compact .fieldWrap,.compact .actions,.compact .status,.compact .routebox{display:none!important}.compact .brand h1{font-size:16px}.drivehud{display:none;position:absolute;z-index:6;top:calc(70px + env(safe-area-inset-top));left:9px;right:9px;margin:auto;max-width:490px;background:#102c3deb;padding:13px;border-radius:14px;box-shadow:0 4px 20px #0008}.compact .drivehud{display:block}.hudrow{display:flex;justify-content:space-between;align-items:center;gap:8px}.drivehud strong{color:#42e3c4;font-size:18px}.drivehud span{display:block;color:#c4dee7;font-size:12px;margin-top:4px}.drivehud button{padding:9px}.compact .bottom{display:none}.turncard{display:none;margin-top:8px;background:#19545b;border-radius:11px;padding:10px 12px}.compact .turncard{display:block}.turncard b{font-size:18px;display:block}.turncard small{color:#dcf9f5;font-size:13px}
 #panelToggle{padding:9px 11px;background:#22495a;color:#fff;border:1px solid #3f7180;font-size:13px}
 .map-preview .overlay{top:calc(7px + env(safe-area-inset-top));left:9px;right:9px;max-width:490px;pointer-events:none}
@@ -11,7 +11,7 @@
 .trafficKey span{white-space:nowrap}.trafficKey i{display:inline-block;width:11px;height:5px;border-radius:2px;vertical-align:middle;margin:0 3px 0 8px}
 .trafficKey i:first-child{margin-left:0}
 @media(max-height:690px){.overlay{top:5px}.panel{padding:11px}.brand{margin-bottom:8px}.field{padding:9px}.routebtn{padding:7px}}
-</style></head><body><div id="map"></div><div class="overlay"><section class="panel"><div class="brand"><div><h1>↗ ClearRoute</h1><small>Find the calmer way there.</small></div><div class="pill">LIVE TRAFFIC · v2.1</div><button class="secondary" id="panelToggle" type="button" aria-expanded="true">Hide ▴</button></div><div class="row"><input id="origin" class="field" readonly placeholder="Starting location: GPS"><button class="secondary loc" id="gps">◎ My GPS</button></div><div class="fieldWrap"><input id="destination" class="field" placeholder="Where are you going?" autocomplete="off"><div id="suggestions" class="suggestions"></div></div><div class="actions"><button id="search">Find routes</button><button class="secondary" id="refresh">↻ Refresh</button></div><div class="status" id="status">Allow location access to get started.</div><div class="routebox" id="routebox"><div class="routegrid" id="routegrid"></div><div class="info" id="info"></div><div class="drivebar" id="drivebar"><div><strong>● Monitoring live traffic</strong><div class="sub" id="driveinfo">Rechecking traffic every 60 seconds</div></div><button id="stop">Stop</button></div><div class="actions"><button id="start" style="display:none">▶ Start driving</button></div></div></section></div><div id="drivehud" class="drivehud"><div class="hudrow"><div><strong id="hudeta">Monitoring route</strong><span id="hudroute">Rechecking traffic every 60 seconds</span></div><button id="expand" class="secondary">Routes ▾</button><button id="hudstop">Stop</button></div><div class="turncard"><small id="turnDistance">Next turn</small><b id="turnText">Follow route</b></div></div><button id="recenter" class="recenter" type="button" aria-label="Return map to my GPS location">◎ Recenter</button><div class="trafficKey"><span><i style="background:#e8ce3c"></i>Moderate<i style="background:#fb792d"></i>Heavy<i style="background:#ef3f43"></i>Severe</span></div><div class="bottom">Experimental waypoint-generated routes (Mapbox road/traffic data). Experimental visual turns; do not rely on this for driving. Keep screen open; do not interact while driving.</div><script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script><script>
+</style></head><body><div id="map"></div><div class="overlay"><section class="panel"><div class="brand"><div><h1>↗ ClearRoute</h1><small>Find the calmer way there.</small></div><div class="pill">LIVE TRAFFIC · v2.2</div><button class="secondary" id="panelToggle" type="button" aria-expanded="true">Hide ▴</button></div><div class="row"><input id="origin" class="field" readonly placeholder="Starting location: GPS"><button class="secondary loc" id="gps">◎ My GPS</button></div><div class="fieldWrap"><input id="destination" class="field" placeholder="Where are you going?" autocomplete="off"><div id="suggestions" class="suggestions"></div></div><div class="actions"><button id="search">Find routes</button><button class="secondary" id="refresh">↻ Refresh</button></div><div class="status" id="status">Allow location access to get started.</div><div class="routebox" id="routebox"><div class="routegrid" id="routegrid"></div><div class="info" id="info"></div><div class="drivebar" id="drivebar"><div><strong>● Monitoring live traffic</strong><div class="sub" id="driveinfo">Rechecking traffic every 60 seconds</div></div><button id="stop">Stop</button></div><div class="actions"><button id="start" style="display:none">▶ Start driving</button></div></div></section></div><div id="drivehud" class="drivehud"><div class="hudrow"><div><strong id="hudeta">Monitoring route</strong><span id="hudroute">Rechecking traffic every 60 seconds</span></div><button id="expand" class="secondary">Routes ▾</button><button id="hudstop">Stop</button></div><div class="turncard"><small id="turnDistance">Next turn</small><b id="turnText">Follow route</b></div></div><button id="recenter" class="recenter" type="button" aria-label="Return map to my GPS location">◎ Recenter</button><div class="trafficKey"><span><i style="background:#e8ce3c"></i>Moderate<i style="background:#fb792d"></i>Heavy<i style="background:#ef3f43"></i>Severe</span></div><div class="bottom">Experimental waypoint-generated routes (Mapbox road/traffic data). Experimental visual turns; do not rely on this for driving. Keep screen open; do not interact while driving.</div><script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script><script>
 'use strict';
 const TOKEN='pk.eyJ1IjoiZ2VvcmdlazA3MDYiLCJhIjoiY212cXZ4ZGYxMDN3ejJ4b2VhcDBiMW85MCJ9.aD7A55aARmJ31GP6esgjeQ';mapboxgl.accessToken=TOKEN;
 const $=id=>document.getElementById(id);const map=new mapboxgl.Map({container:'map',style:'mapbox://styles/mapbox/dark-v11',center:[-118.45,34.10],zoom:10});map.addControl(new mapboxgl.NavigationControl(),'bottom-right');let origin=null,destination=null,destinationLabel='',routes=[],chosen=0,mode='balanced',tracking=false,expanded=false,watchId=null,timer=null,marker=null,requestBusy=false,lastAnnouncement='',lastSelectedRoute=null;let lastQueryPosition=null,lastGPS=null,lastReroute=0,routeUpdatedAt=0,offRouteHits=0,pendingOffRoute=false,previewHidden=false,followGPS=true;const setStatus=s=>$('status').textContent=s;const minutes=s=>Math.max(1,Math.round(s/60));const clockDuration=s=>{s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};const miles=m=>(m/1609.344).toFixed(1);const arrival=s=>new Date(Date.now()+s*1000).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});const sleepDebounce={id:0};
@@ -107,15 +107,52 @@ function updateLiveETA(){
  $('hudroute').textContent='Arrive ~'+etaClock+' · '+miles(remainingMeters)+' mi left · '+mode;
  $('driveinfo').textContent=quality+' · traffic refreshed every 60 sec';
 }
-function neighborhoodWaypoints(route){
- const coords=route.geometry?.coordinates||[];if(coords.length<8)return [];
- const delta=route.distance<8000?.18:route.distance<22000?.32:.45,out=[];
- for(const p of [.22,.38,.55,.72,.85]){
-  const i=Math.max(2,Math.min(coords.length-3,Math.floor(coords.length*p))),a=coords[i-2],pt=coords[i],b=coords[i+2],lat=pt[1]*Math.PI/180;
-  const dx=(b[0]-a[0])*Math.cos(lat),dy=b[1]-a[1],len=Math.hypot(dx,dy)||1;
-  for(const sign of [-1,1])out.push([pt[0]-dy/len*delta*sign/(111.32*Math.cos(lat)),pt[1]+dx/len*delta*sign/111.32]);
+// Approximate congestion hotspot positions from Mapbox annotation distances.
+// Annotations do not necessarily align one-for-one with the overview polyline,
+// so map cumulative meters to the full geometry by distance.
+function hotspotFractions(route){
+ const values=[];
+ for(const leg of route.legs||[]){
+  const a=leg.annotation||{},dist=a.distance||[],levels=a.congestion_numeric||[];
+  for(let i=0;i<dist.length;i++)values.push({d:dist[i]||0,c:Number.isFinite(levels[i])?levels[i]:null});
  }
- return out;
+ const total=values.reduce((x,v)=>x+v.d,0);if(total<500)return [.3,.52,.7];
+ let walked=0,hot=[];
+ for(const v of values){
+  if(v.c!==null&&v.c>=55&&v.d>0)hot.push({f:(walked+v.d/2)/total,weight:v.c*v.d});
+  walked+=v.d;
+ }
+ hot.sort((a,b)=>b.weight-a.weight);
+ const result=[];
+ for(const h of hot){if(h.f>.08&&h.f<.9&&result.every(x=>Math.abs(x-h.f)>.11))result.push(h.f);if(result.length>=3)break;}
+ return result.length?result:[.25,.47,.68];
+}
+function pointAtFraction(coords,fraction){
+ const d=[];let total=0;for(let i=1;i<coords.length;i++){const len=kmBetween(coords[i-1],coords[i]);d.push(len);total+=len;}
+ let target=total*fraction;
+ for(let i=1;i<coords.length;i++){
+  if(target<=d[i-1]){const v=d[i-1]?target/d[i-1]:0;return [coords[i-1][0]+(coords[i][0]-coords[i-1][0])*v,coords[i-1][1]+(coords[i][1]-coords[i-1][1])*v]}
+  target-=d[i-1];
+ }
+ return coords[coords.length-1];
+}
+function localBypassCandidates(route,start,end){
+ const coords=route.geometry?.coordinates||[];if(coords.length<5)return [];
+ const hotspots=hotspotFractions(route),options=[];
+ for(const f of hotspots){
+  const p=pointAtFraction(coords,f),before=pointAtFraction(coords,Math.max(.01,f-.045)),after=pointAtFraction(coords,Math.min(.99,f+.045));
+  const lat=p[1]*Math.PI/180,dx=(after[0]-before[0])*Math.cos(lat),dy=after[1]-before[1],len=Math.hypot(dx,dy)||1;
+  for(const meters of [250,500])for(const side of [-1,1]){
+   const offset=meters/111320,shift=[(-dy/len)*offset/Math.max(.3,Math.cos(lat))*side,(dx/len)*offset*side];
+   const p1=pointAtFraction(coords,Math.max(.03,f-.065));
+   const p2=pointAtFraction(coords,Math.min(.97,f+.065));
+   // Two forced points off the congested corridor help prevent Mapbox returning
+   // directly to the congested boulevard after only one nearby waypoint.
+   const w1=[p1[0]+shift[0],p1[1]+shift[1]],w2=[p2[0]+shift[0],p2[1]+shift[1]];
+   options.push([start,w1,w2,end]);
+  }
+ }
+ return options.slice(0,12);
 }
 function distanceToPolyline(pt,coords){
  if(!coords||coords.length<2)return Infinity;let near=Infinity;const lat=Math.cos(pt[1]*Math.PI/180);
@@ -155,12 +192,13 @@ const base=await requestDirection([startedFrom,destination],!forceReroute);if(!b
 // Show the newly calculated path immediately when the driver deviates.
 if(forceReroute){routes=base;chosen=pickIndex(mode);lastSelectedRoute=routes[chosen];routeUpdatedAt=Date.now();render();updateTurn();setStatus('New route shown from your GPS position. Checking nearby alternatives…');}
 // Limit paid API calls, mobile latency and traffic-data consumption. Try 6 corridors.
-const points=neighborhoodWaypoints(base[0]).slice(0,forceReroute?2:silent?4:10);
-for(let k=0;k<points.length;k+=2){const batch=points.slice(k,k+2);const returned=await Promise.allSettled(batch.map(p=>requestDirection([startedFrom,p,destination],false)));for(const res of returned){if(res.status==='fulfilled')collected.push(...res.value)}
-if((silent||forceReroute)&&k>=2)break;
+const candidates=localBypassCandidates(base[0],startedFrom,destination).slice(0,forceReroute?4:silent?6:10);
+for(let k=0;k<candidates.length;k+=2){const batch=candidates.slice(k,k+2);const returned=await Promise.allSettled(batch.map(points=>requestDirection(points,false)));
+for(const res of returned){if(res.status==='fulfilled')collected.push(...res.value)}
+if((silent||forceReroute)&&k>=4)break;
 }
-const shortest=Math.min(...collected.map(r=>r.duration));const viable=collected.filter(r=>r.duration<=Math.max(shortest*1.5,shortest+420));viable.sort((a,b)=>a.duration-b.duration);
-const unique=[];for(const r of viable){if(!unique.some(e=>routeSimilarity(r,e)>.83))unique.push(r);if(unique.length>=9)break;}
+const shortest=Math.min(...collected.map(r=>r.duration));const viable=collected.filter(r=>r.duration<=Math.min(shortest*1.22,shortest+600));viable.sort((a,b)=>a.duration-b.duration);
+const unique=[];for(const r of viable){if(!unique.some(e=>routeSimilarity(r,e)>.9))unique.push(r);if(unique.length>=9)break;}
 if(!unique.length)throw Error('No usable routes');const previous=lastSelectedRoute;routes=unique;chosen=pickIndex(mode);const selected=routes[chosen];lastSelectedRoute=selected;lastQueryPosition=startedFrom;routeUpdatedAt=Date.now();render();
 const change=tracking&&previous&&routeSimilarity(previous,selected)<.75;
 if(change){setStatus('Different corridor selected after traffic update.');if('speechSynthesis'in window){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance('Traffic update. A different route looks better. Check safely when stopped.'));}}

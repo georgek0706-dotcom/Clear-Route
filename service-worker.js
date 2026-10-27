@@ -1,0 +1,1 @@
+const CACHE='clearroute-shell-v1';self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','./index.html','./manifest.json','./icon.png']))));self.addEventListener('fetch',e=>{if(e.request.url.startsWith(self.location.origin)&&e.request.method==='GET')e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)));});

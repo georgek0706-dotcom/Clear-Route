@@ -45,7 +45,7 @@ function routeArterialExposure(r){
  for(const leg of r.legs||[])for(const step of leg.steps||[]){
   const d=step.distance||0,name=(step.name||'').toLowerCase();
   meters+=d;
-  if(/\\b(blvd|boulevard|avenue|ave|highway|hwy|freeway|fwy|expressway|parkway|pkwy)\\b/.test(name))majorMeters+=d;
+  if(/\b(blvd|boulevard|avenue|ave|highway|hwy|freeway|fwy|expressway|parkway|pkwy)\b/.test(name))majorMeters+=d;
   if(/turn|roundabout|fork|merge/i.test(step.maneuver?.type||''))turns++;
  }
  return {majorShare:meters?majorMeters/meters:0,turns};

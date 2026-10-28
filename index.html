@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071827"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon.png"><title>ClearRoute — Traffic-Aware Navigation v2.9</title><link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet"><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071827"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon.png"><title>ClearRoute — Traffic-Aware Navigation v3.1</title><link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet"><style>
 :root{color-scheme:dark;--bg:#071827;--card:#112a3a;--text:#f1f8ff;--muted:#a4bdca;--aqua:#42e3c4}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}#map{position:fixed;inset:0}.overlay{position:absolute;z-index:5;top:calc(12px + env(safe-area-inset-top));left:12px;right:12px;max-width:490px;margin:auto}.panel{background:rgba(7,24,39,.95);border:1px solid #315060;box-shadow:0 10px 38px #0015;border-radius:19px;padding:16px;backdrop-filter:blur(16px)}h1{font-size:21px;margin:0 0 4px;letter-spacing:-.4px}small,.sub{color:var(--muted)}.brand{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.pill{border:1px solid #38677b;padding:5px 8px;border-radius:9px;color:#8beedb;font-size:11px}.row{display:flex;gap:8px}.field{background:#173344;color:#fff;border:1px solid #3a5c6e;padding:12px;border-radius:11px;width:100%;font-size:16px;min-width:0}input:focus{outline:2px solid var(--aqua)}button{border:0;border-radius:11px;padding:11px 13px;font:600 14px -apple-system,sans-serif;cursor:pointer;color:#07202b;background:var(--aqua)}button:disabled{opacity:.5}.secondary{color:#f1f8ff;background:#23485e}.loc{width:125px;flex-shrink:0}.fieldWrap{position:relative;margin-top:8px}.suggestions{position:absolute;left:0;right:0;top:48px;background:#193648;border:1px solid #3c6576;border-radius:10px;max-height:180px;overflow:auto;z-index:20;display:none}.suggestions button{display:block;width:100%;text-align:left;background:transparent;border-radius:0;border-bottom:1px solid #315267;color:#fff;font-weight:400}.actions{display:flex;gap:8px;margin-top:10px}.actions button{flex:1}.status{font-size:12px;margin-top:9px;color:#abd0df;min-height:18px}.routebox{margin-top:10px;display:none}.routegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.routebtn{display:block;text-align:left;min-width:0;background:#183746;border:1px solid #3e6070;color:white;padding:10px 8px}.routebtn.selected{border:2px solid var(--aqua);background:#1a4c51}.routebtn strong{display:block;font-size:12px;margin-bottom:5px}.routebtn b{font-size:21px}.routebtn span{display:block;font-size:11px;color:#afcbd4;margin-top:4px}.info{font-size:12px;color:#bfd4dd;margin:10px 1px 0}.drivebar{display:none;margin-top:10px;padding:10px 12px;background:#18413e;border-radius:11px;justify-content:space-between;align-items:center;gap:8px}.drivebar strong{color:#8cffe1}.drivebar button{background:#ffceb7}.bottom{position:absolute;z-index:4;bottom:calc(14px + env(safe-area-inset-bottom));left:12px;right:12px;max-width:480px;margin:auto;background:#071827de;border-radius:14px;padding:10px 13px;color:#c1d6de;font-size:12px;text-align:center}.mapboxgl-ctrl-bottom-right{bottom:60px}.compact .overlay{top:calc(7px + env(safe-area-inset-top));left:9px;right:9px}.compact .panel{padding:10px 12px;border-radius:13px}.compact .brand{margin:0}.compact .brand small,.compact .brand .pill,.compact .row,.compact .fieldWrap,.compact .actions,.compact .status,.compact .routebox{display:none!important}.compact .brand h1{font-size:16px}.drivehud{display:none;position:absolute;z-index:6;top:calc(70px + env(safe-area-inset-top));left:9px;right:9px;margin:auto;max-width:490px;background:#102c3deb;padding:13px;border-radius:14px;box-shadow:0 4px 20px #0008}.compact .drivehud{display:block}.hudrow{display:flex;justify-content:space-between;align-items:center;gap:8px}.drivehud strong{color:#42e3c4;font-size:18px}.drivehud span{display:block;color:#c4dee7;font-size:12px;margin-top:4px}.drivehud button{padding:9px}.compact .bottom{display:none}.turncard{display:none;margin-top:8px;background:#19545b;border-radius:11px;padding:10px 12px}.compact .turncard{display:block}.turncard b{font-size:18px;display:block}.turncard small{color:#dcf9f5;font-size:13px}
 #panelToggle{padding:9px 11px;background:#22495a;color:#fff;border:1px solid #3f7180;font-size:13px}
 .map-preview .overlay{top:calc(7px + env(safe-area-inset-top));left:9px;right:9px;max-width:490px;pointer-events:none}
@@ -11,7 +11,7 @@
 .trafficKey span{white-space:nowrap}.trafficKey i{display:inline-block;width:11px;height:5px;border-radius:2px;vertical-align:middle;margin:0 3px 0 8px}
 .trafficKey i:first-child{margin-left:0}
 @media(max-height:690px){.overlay{top:5px}.panel{padding:11px}.brand{margin-bottom:8px}.field{padding:9px}.routebtn{padding:7px}}
-</style></head><body><div id="map"></div><div class="overlay"><section class="panel"><div class="brand"><div><h1>↗ ClearRoute</h1><small>Find the calmer way there.</small></div><div class="pill">LIVE TRAFFIC · v2.9</div><button class="secondary" id="panelToggle" type="button" aria-expanded="true">Hide ▴</button></div><div class="row"><input id="origin" class="field" readonly placeholder="Starting location: GPS"><button class="secondary loc" id="gps">◎ My GPS</button></div><div class="fieldWrap"><input id="destination" class="field" placeholder="Where are you going?" autocomplete="off"><div id="suggestions" class="suggestions"></div></div><div class="actions"><button id="search">Find routes</button><button class="secondary" id="refresh">↻ Refresh</button></div><div class="status" id="status">Allow location access to get started.</div><div class="routebox" id="routebox"><div class="routegrid" id="routegrid"></div><div class="info" id="info"></div><div class="drivebar" id="drivebar"><div><strong>● Monitoring live traffic</strong><div class="sub" id="driveinfo">Rechecking traffic every 60 seconds</div></div><button id="stop">Stop</button></div><div class="actions"><button id="start" style="display:none">▶ Start driving</button></div></div></section></div><div id="drivehud" class="drivehud"><div class="hudrow"><div><strong id="hudeta">Monitoring route</strong><span id="hudroute">Rechecking traffic every 60 seconds</span></div><button id="expand" class="secondary">Routes ▾</button><button id="hudstop">Stop</button></div><div class="turncard"><small id="turnDistance">Next turn</small><b id="turnText">Follow route</b></div></div><button id="routeWeb" class="webToggle" type="button" aria-pressed="false">◇ Street Web</button><button id="recenter" class="recenter" type="button" aria-label="Return map to my GPS location">◎ Recenter</button><div class="trafficKey"><span><i style="background:#e8ce3c"></i>Moderate<i style="background:#fb792d"></i>Heavy<i style="background:#ef3f43"></i>Severe</span></div><div class="bottom">Experimental waypoint-generated routes (Mapbox road/traffic data). Experimental visual turns; do not rely on this for driving. Keep screen open; do not interact while driving.</div><script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script><script>
+</style></head><body><div id="map"></div><div class="overlay"><section class="panel"><div class="brand"><div><h1>↗ ClearRoute</h1><small>Find the calmer way there.</small></div><div class="pill">LIVE TRAFFIC · v3.1</div><button class="secondary" id="panelToggle" type="button" aria-expanded="true">Hide ▴</button></div><div class="row"><input id="origin" class="field" readonly placeholder="Starting location: GPS"><button class="secondary loc" id="gps">◎ My GPS</button></div><div class="fieldWrap"><input id="destination" class="field" placeholder="Where are you going?" autocomplete="off"><div id="suggestions" class="suggestions"></div></div><div class="actions"><button id="search">Find routes</button><button class="secondary" id="refresh">↻ Refresh</button></div><div class="status" id="status">Allow location access to get started.</div><div class="routebox" id="routebox"><div class="routegrid" id="routegrid"></div><div class="info" id="info"></div><div class="drivebar" id="drivebar"><div><strong>● Monitoring live traffic</strong><div class="sub" id="driveinfo">Rechecking traffic every 60 seconds</div></div><button id="stop">Stop</button></div><div class="actions"><button id="start" style="display:none">▶ Start driving</button></div></div></section></div><div id="drivehud" class="drivehud"><div class="hudrow"><div><strong id="hudeta">Monitoring route</strong><span id="hudroute">Rechecking traffic every 60 seconds</span></div><button id="expand" class="secondary">Routes ▾</button><button id="hudstop">Stop</button></div><div class="turncard"><small id="turnDistance">Next turn</small><b id="turnText">Follow route</b></div></div><button id="routeWeb" class="webToggle" type="button" aria-pressed="false">◇ Street Web</button><button id="recenter" class="recenter" type="button" aria-label="Return map to my GPS location">◎ Recenter</button><div class="trafficKey"><span><i style="background:#e8ce3c"></i>Moderate<i style="background:#fb792d"></i>Heavy<i style="background:#ef3f43"></i>Severe</span></div><div class="bottom">Experimental waypoint-generated routes (Mapbox road/traffic data). Experimental visual turns; do not rely on this for driving. Keep screen open; do not interact while driving.</div><script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script><script>
 'use strict';
 const TOKEN='pk.eyJ1IjoiZ2VvcmdlazA3MDYiLCJhIjoiY212cXZ4ZGYxMDN3ejJ4b2VhcDBiMW85MCJ9.aD7A55aARmJ31GP6esgjeQ';mapboxgl.accessToken=TOKEN;
 const $=id=>document.getElementById(id);const map=new mapboxgl.Map({container:'map',style:'mapbox://styles/mapbox/dark-v11',center:[-118.45,34.10],zoom:10});map.addControl(new mapboxgl.NavigationControl(),'bottom-right');let origin=null,destination=null,destinationLabel='',routes=[],chosen=0,mode='balanced',tracking=false,expanded=false,watchId=null,timer=null,marker=null,requestBusy=false,lastAnnouncement='',lastSelectedRoute=null;let lastQueryPosition=null,lastGPS=null,lastReroute=0,routeUpdatedAt=0,offRouteHits=0,pendingOffRoute=false,previewHidden=false,followGPS=true,webVisible=false;const setStatus=s=>$('status').textContent=s;const minutes=s=>Math.max(1,Math.round(s/60));const clockDuration=s=>{s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};const miles=m=>(m/1609.344).toFixed(1);const arrival=s=>new Date(Date.now()+s*1000).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});const sleepDebounce={id:0};
@@ -70,55 +70,31 @@ function pickIndex(m){
 // This display filter conservatively excludes road classes commonly used for
 // limited-access spurs and service driveways. Full dead-end detection requires
 // connectivity analysis; do not represent every highlighted segment as through-access.
-let webTopologyTimer=null;
-function streetPointKey(p){const latitude=p[1]*Math.PI/180;return Math.round(p[0]*111320*Math.cos(latitude)/16)+','+Math.round(p[1]*111320/16)}
-function updateConnectedWeb(){
- if(!webVisible||!map.isStyleLoaded()||!map.getSource('connected-web'))return;
- const visible=map.querySourceFeatures('neighborhood-roads',{sourceLayer:'road',filter:['all',
-  ['in','class','street','primary','secondary','tertiary','residential','unclassified','trunk'],
-  ['!=','access','private'],['!=','access','no']]});
- const ways=[],seen=new Set(),counts=new Map();
- for(const feature of visible){
-  if(!feature.geometry||!['LineString','MultiLineString'].includes(feature.geometry.type))continue;
-  const lines=feature.geometry.type==='LineString'?[feature.geometry.coordinates]:feature.geometry.coordinates;
-  for(const coords of lines){
-   if(coords.length<2)continue;
-   const start=streetPointKey(coords[0]),end=streetPointKey(coords[coords.length-1]);
-   const mid=coords[Math.floor(coords.length/2)];
-   const sig=[start,end].sort().join('|')+'|'+streetPointKey(mid);
-   if(seen.has(sig))continue;seen.add(sig);ways.push({coords,start,end});
-   counts.set(start,(counts.get(start)||0)+1);counts.set(end,(counts.get(end)||0)+1);
-  }
- }
- // Require connections at BOTH ends. Dead ends and unknown tile-edge segments
- // are intentionally hidden from the colored overlay; base map stays untouched.
- const features=ways.filter(w=>w.start!==w.end&&(counts.get(w.start)||0)>1&&(counts.get(w.end)||0)>1).map(w=>({
-  type:'Feature',properties:{kind:'candidate-connection'},
-  geometry:{type:'LineString',coordinates:w.coords}
- }));
- map.getSource('connected-web').setData({type:'FeatureCollection',features});
-}
-function scheduleConnectedWeb(){
- if(webTopologyTimer)clearTimeout(webTopologyTimer);
- if(webVisible)webTopologyTimer=setTimeout(updateConnectedWeb,350);
-}
 function neighborhoodWebOverlay(){
  if(!map.isStyleLoaded())return;
  try{
   if(!map.getSource('neighborhood-roads'))map.addSource('neighborhood-roads',{type:'vector',url:'mapbox://mapbox.mapbox-streets-v8'});
-  if(!map.getSource('connected-web'))map.addSource('connected-web',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
-  if(!map.getLayer('neighborhood-street-web'))map.addLayer({
-   id:'neighborhood-street-web',type:'line',source:'connected-web',
-   layout:{'line-cap':'round','line-join':'round','visibility':'none'},
-   paint:{'line-color':'#70caff','line-opacity':.84,
-    'line-width':['interpolate',['linear'],['zoom'],11,1,13,2,15,3,17,4],'line-dasharray':[1.3,1.0]}
-  },map.getLayer('chosen')?'chosen':undefined);
+  if(!map.getLayer('neighborhood-street-web')){
+   map.addLayer({id:'neighborhood-street-web',type:'line',source:'neighborhood-roads','source-layer':'road',minzoom:11,
+    filter:['all',
+     ['in',['get','class'],['literal',['street','primary','secondary','tertiary','residential','unclassified','trunk']]],
+     ['!=',['get','access'],'private'],
+     ['!=',['get','access'],'no'],
+     ['!=',['get','type'],'service'],
+     ['!=',['get','structure'],'tunnel']],
+    layout:{'line-cap':'round','line-join':'round','visibility':'none'},
+    paint:{
+     'line-color':['match',['get','class'],'street','#70caff','street_limited','#70caff','residential','#70caff','service','#5f92aa','primary','#d6a9ff','secondary','#d6a9ff','tertiary','#a5bce9','#84bed8'],
+     'line-opacity':['interpolate',['linear'],['zoom'],11,.2,13,.42,15,.75,17,.92],
+     'line-width':['interpolate',['linear'],['zoom'],11,1,13,2,15,3,17,4],
+     'line-dasharray':[1.3,1.0]
+    }
+   },map.getLayer('route-lines')?'chosen':undefined);
+  }
   map.setLayoutProperty('neighborhood-street-web','visibility',webVisible?'visible':'none');
-  scheduleConnectedWeb();
- }catch(e){setStatus('Street Web unavailable: '+e.message)}
+ }catch(error){setStatus('Street overlay unavailable: '+error.message)}
 }
-map.on('moveend',scheduleConnectedWeb);
-map.on('sourcedata',e=>{if(e.sourceId==='neighborhood-roads'&&e.isSourceLoaded)scheduleConnectedWeb()});
+
 function draw(){
  if(!map.isStyleLoaded()){map.once('load',draw);return;}
  const data={type:'FeatureCollection',features:routes.map((r,i)=>({type:'Feature',properties:{idx:i,shade:i%5},geometry:r.geometry}))};
